@@ -1,0 +1,15 @@
+name: Ping Azan Bot
+
+on:
+  schedule:
+    - cron: '*/5 * * * *' # jalan tiap 5 menit
+  workflow_dispatch: # biar bisa test manual
+
+jobs:
+  ping:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Call Vercel Cron Endpoint
+        run: |
+          curl -X GET "https://bot-azan.vercel.app/api/cron" \
+          -H "Authorization: Bearer ${{ secrets.CRON_SECRET }}"
