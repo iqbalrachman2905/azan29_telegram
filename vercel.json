@@ -1,6 +1,6 @@
 {
   "functions": {
-    "api/cron.py": {
+    "api/webhook.py": {
       "maxDuration": 10
     }
   }
